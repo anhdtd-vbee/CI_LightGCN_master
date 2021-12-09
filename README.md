@@ -1,4 +1,4 @@
-***This README is the guidience of reproducing CI-LightGCN results. Because the evaluation process of CI-LightGCN is a sequential scenes, if you run the code without any mid products it will cost very large time (for data processing, training at each stage, and testing at each staeg). So we also provide mid products for quickly reproducing. And our code can also run without any mid products, since it can automatically generate all mid products.***
+***This README is the guidience of reproducing CI-LightGCN results. Since the evaluation process of CI-LightGCN is sequential, if you run the code without any mid products it will cost a very large time (for data processing, training at each stage, and testing at each stage). So we also provide mid products for quickly reproducing at "xxxx". And our code can also run without any mid products, since it can automatically generate all mid products.***
 
 # REQUESMENT
 1.torch >=1.7.1
@@ -9,6 +9,8 @@
 
 4.tqdm
 
+Or you can use the docker by commind ```docker pull dsihao/3090_torch171```.
+
 ___The necessary files must be downloaded at "http"___
 __Overall:
 A is about how to quickly reproduce the results; B is the introduction of data; C is the mid products that for quickly reproducing; D is how to retrain the CI-LightGCN from zero with no mid products__
@@ -16,10 +18,10 @@ A is about how to quickly reproduce the results; B is the introduction of data; 
 # A. Quickly reproduce the results
 
 1. To quickly reproduce the result of CI-LightGCN in Yelp you can use the commend 
-```python main_handle_fancy4_wule_idea2_M3_noConv.py  --dataset='finetune_yelp' --model CILightGCN --finetune_epochs 300 --conv2d_reg 1e-2 --decay 1e-4 --icl_k 61 --notactive 1 --A 0.5 --inference_k 11 --radio_loss 0.7 --icl_reg 1```
+```python CI-LightGCN.py  --dataset='finetune_yelp' --model CILightGCN --finetune_epochs 300 --conv2d_reg 1e-2 --decay 1e-4 --icl_k 61 --notactive 1 --A 0.5 --inference_k 11 --radio_loss 0.7 --icl_reg 1```
 
 2. To quickly reproduce the result of CI-LightGCN in Gowalla you can use the commend 
-```python main_handle_fancy4_wule_idea2_M3_noConv.py  --dataset='gowalla' --model CILightGCN --finetune_epochs 200 --conv2d_reg 1e-3 --decay 1e-3 --icl_k 58 --notactive 1 --A 0.6 --inference_k 28 --radio_loss 0.02 --icl_reg 0.0005```
+```python CI-LightGCN.py  --dataset='gowalla' --model CILightGCN --finetune_epochs 200 --conv2d_reg 1e-3 --decay 1e-3 --icl_k 58 --notactive 1 --A 0.6 --inference_k 28 --radio_loss 0.02 --icl_reg 0.0005```
 
 # B. The processed data
 1. "./data/finetune_yelp" is all data you need of Yelp. Where "./data/finetune_yelp/train" is the data for train, and "./data/finetune_yelp/test" is the data for test. "./data/finetune_yelp/information.npy" is the information of this dataset.
@@ -29,6 +31,7 @@ _All data below can generate by our code, we prove them for saving your reproduc
 3. "./data/finetune_yelp/xxx.npy" is the degree at one stage. 
 4. "./data/finetune_yelp/rescale_vec" is the degree ratio between two stages.
 
+_The naming logic of Gowalla is the same as Yelp, replacing "finetune_yelp" by "gowalla" you can get the processed data of Gowalla._
 
 # C. The required pre-processing results for quickly reproducing
 
@@ -48,7 +51,7 @@ By using these files you can abandon all the training phase of CI-LightGCN for q
 # D To reproduce from zero
 
 1. To reproduce the result of CI-LightGCN in Yelp from zero you can use the commend 
-```python main_handle_fancy4_wule_idea2.py  --dataset='finetune_yelp' --model CILightGCN --finetune_epochs 300 --conv2d_reg 1e-2 --decay 1e-4 --icl_k 61 --notactive 1 --A 0.5 --inference_k 11 --radio_loss 0.7 --icl_reg 1```
+```python CI-LightGCN_from_zero.py  --dataset='finetune_yelp' --model CILightGCN --finetune_epochs 300 --conv2d_reg 1e-2 --decay 1e-4 --icl_k 61 --notactive 1 --A 0.5 --inference_k 11 --radio_loss 0.7 --icl_reg 1```
 
 2. To reproduce the result of CI-LightGCN in Gowalla from zero you can use the commend 
-```python main_handle_fancy4_wule_idea2.py  --dataset='gowalla' --model CILightGCN --finetune_epochs 200 --conv2d_reg 1e-3 --decay 1e-3 --icl_k 58 --notactive 1 --A 0.6 --inference_k 28 --radio_loss 0.02 --icl_reg 0.0005```
+```python CI-LightGCN_from_zero.py  --dataset='gowalla' --model CILightGCN --finetune_epochs 200 --conv2d_reg 1e-3 --decay 1e-3 --icl_k 58 --notactive 1 --A 0.6 --inference_k 28 --radio_loss 0.02 --icl_reg 0.0005```
