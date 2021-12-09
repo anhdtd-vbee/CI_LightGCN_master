@@ -11,7 +11,7 @@
 
 Or you can use the docker by commind ```docker pull dsihao/3090_torch171```.
 
-___The necessary files must be downloaded at "http"___
+___The necessary files must be downloaded at "xxxx"___
 __Overall:
 A is about how to quickly reproduce the results; B is the introduction of data; C is the mid products that for quickly reproducing; D is how to retrain the CI-LightGCN from zero with no mid products__
 
@@ -27,6 +27,7 @@ A is about how to quickly reproduce the results; B is the introduction of data; 
 1. "./data/finetune_yelp" is all data you need of Yelp. Where "./data/finetune_yelp/train" is the data for train, and "./data/finetune_yelp/test" is the data for test. "./data/finetune_yelp/information.npy" is the information of this dataset.
 
 _All data below can generate by our code, we prove them for saving your reproduce time._
+
 2. "./data/finetune_yelp/xxx.npz" is the Adj matrix of one stage, some are for CI-LightGCN and Fine-tune LightGCN, some are for Fullretrain LightGCN.
 3. "./data/finetune_yelp/xxx.npy" is the degree at one stage. 
 4. "./data/finetune_yelp/rescale_vec" is the degree ratio between two stages.
