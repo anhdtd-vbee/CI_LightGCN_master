@@ -2,10 +2,14 @@
 
 # REQUESMENT
 1.torch >=1.7.1
-2.tqdm
-3.numpy>=1.19.1
-4.scipy>=1.5.2
 
+2.numpy>=1.19.1
+
+3.scipy>=1.5.2
+
+4.tqdm
+
+___The necessary files must be downloaded at "http"___
 __Overall:
 A is about how to quickly reproduce the results; B is the introduction of data; C is the mid products that for quickly reproducing; D is how to retrain the CI-LightGCN from zero with no mid products__
 
