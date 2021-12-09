@@ -18,10 +18,10 @@ A is about how to quickly reproduce the results; B is the introduction of data; 
 
 # A. Quickly reproduce the results
 
-1. To quickly reproduce the result of CI-LightGCN in Yelp you can use the commend 
+1. To quickly reproduce the result of CI-LightGCN in Yelp you can use the commend: 
 ```python CI-LightGCN.py  --dataset='finetune_yelp' --model CILightGCN --finetune_epochs 300 --conv2d_reg 1e-2 --decay 1e-4 --icl_k 61 --notactive 1 --A 0.5 --inference_k 11 --radio_loss 0.7 --icl_reg 1```
 
-2. To quickly reproduce the result of CI-LightGCN in Gowalla you can use the commend 
+2. To quickly reproduce the result of CI-LightGCN in Gowalla you can use the commend: 
 ```python CI-LightGCN.py  --dataset='gowalla' --model CILightGCN --finetune_epochs 200 --conv2d_reg 1e-3 --decay 1e-3 --icl_k 58 --notactive 1 --A 0.6 --inference_k 28 --radio_loss 0.02 --icl_reg 0.0005```
 
 # B. The processed data
