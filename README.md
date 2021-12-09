@@ -11,7 +11,7 @@
 
 Or you can use the docker by commind ```docker pull dsihao/3090_torch171```.
 
-\color{red}{___The necessary files must be downloaded at "xxxx"___}
+<font color='red'> text <___The necessary files must be downloaded at "xxxx"___>
 
 __Overall:
 A is about how to quickly reproduce the results; B is the introduction of data; C is the mid products that for quickly reproducing; D is how to retrain the CI-LightGCN from zero with no mid products__
