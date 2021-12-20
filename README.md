@@ -1,27 +1,29 @@
-# Because the paper is underreview, the code is only for peer review
-***This README is the guidience of reproducing CI-LightGCN results. Because the evaluation process of CI-LightGCN is a sequential scenes, if you run the code without any mid products it will cost very large time (for data processing, training at each stage, and testing at each staeg). So we also provide mid products for quickly reproducing at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320". And our code can also run without any mid products, since it can automatically generate all mid products.***
+# Because the paper is underreview, the code is only for peer review.
+***This README is the guidience of reproducing CI-LightGCN results. Because the evaluation process of CI-LightGCN is a sequential scenes, if you run the code without any mid products it will cost very large time (for data processing, training at each stage, and testing at each stage). So we also provide mid products at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320" for quickly reproducing. Our code can also run without any mid products but with large preparation time.***
 
 # REQUESMENT
-1.torch >=1.7.1
+1.torch >= 1.7.1
 
-2.scipy>=1.5.2
+2.scipy >= 1.5.2
 
-3.numpy>=1.19.1
+3.numpy >= 1.19.1
 
 4.CUDA 11.1
 
 5.tqdm
 
-Or you can use docker ```docker pull dsihao/3090_torch171```
+Or you can use docker to build the environment ```docker pull dsihao/3090_torch171```
 
 # Overall:
 ___The necessary files must be downloaded at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320"___
+
+The following parts are:
 
 A is about how to quickly reproduce the results
 
 B is the introduction of data
 
-C is the mid products that for quickly reproducing
+C is the introduction of mid products that for quickly reproducing
 
 D is how to retrain the CI-LightGCN from zero with no mid products
 
