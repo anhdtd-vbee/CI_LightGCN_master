@@ -38,13 +38,13 @@ D is how to retrain the CI-LightGCN from zero with no mid products
 # B. The processed data
 1. "./data/finetune_yelp" is all data you need of Yelp. Where "./data/finetune_yelp/train" is the data for train, and "./data/finetune_yelp/test" is the data for test. "./data/finetune_yelp/information.npy" is the information of this dataset.
 
-_All data below can generate by our code, we prove them for saving your reproduce time._
+_All data below can generate by our code, we prove them for saving your reproducing time._
 
-2. "./data/finetune_yelp/xxx.npz" is the Adj matrix of one stage, some are for CI-LightGCN and Fine-tune LightGCN, some are for Fullretrain LightGCN.
-3. "./data/finetune_yelp/xxx.npy" is the degree at one stage. 
-4. "./data/finetune_yelp/rescale_vec" is the degree ratio between two stages.
+2. "./data/finetune_yelp/xxx.npz" is the Adj matrix of each stage, some Adj matrixs correspond to incremental graph are for CI-LightGCN and Fine-tune LightGCN, some Adj matrixs correspond to full graph are for Fullretrain LightGCN.
+3. "./data/finetune_yelp/xxx.npy" is the degree information of all nodes at each stage. 
+4. "./data/finetune_yelp/rescale_vec" is the degree ratio between two adjacent stages.
 
-__All data files of Gowalla is the same naming logic, change "finetune_yelp" to "gowalla" you can get the files for gowalla__
+__All data files of Gowalla is the same naming logic, change "/finetune_yelp/" to "/gowalla/" you can get the files for gowalla__
 
 
 # C. The required pre-processing results for quickly reproducing
