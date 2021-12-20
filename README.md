@@ -1,4 +1,4 @@
-# Only for review
+# Because the paper is underreview, the code is only for peer review
 ***This README is the guidience of reproducing CI-LightGCN results. Because the evaluation process of CI-LightGCN is a sequential scenes, if you run the code without any mid products it will cost very large time (for data processing, training at each stage, and testing at each staeg). So we also provide mid products for quickly reproducing at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320". And our code can also run without any mid products, since it can automatically generate all mid products.***
 
 # REQUESMENT
