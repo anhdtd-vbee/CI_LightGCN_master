@@ -60,7 +60,7 @@ for stage in range(world.Meta_start-1,world.FR_end):
             else :
                 LGCN_params += [p]
         if world.dataset == 'news':
-            opt_LGCN=optim.Adam([{'params': LGCN_params, 'lr': world.lgcn_lr}, {'params': conv2d_params, 'lr': 0.1*world.lgcn_lr},{'params': degree_params, 'lr': 0.1*world.lgcn_lr}])
+            opt_LGCN=optim.Adam([{'params': LGCN_params, 'lr': world.lgcn_lr}, {'params': conv2d_params, 'lr': 0.1*world.lgcn_lr},{'params': degree_params, 'lr': 0.00001*world.lgcn_lr}])
         elif world.dataset == 'finetune_yelp':
             opt_LGCN=optim.Adam([{'params': LGCN_params, 'lr': world.lgcn_lr}, {'params': conv2d_params, 'lr': 0.001*world.lgcn_lr},{'params': degree_params, 'lr': 0.001*world.lgcn_lr}])
         elif world.dataset == 'gowalla':
