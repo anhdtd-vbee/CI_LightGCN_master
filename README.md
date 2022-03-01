@@ -1,10 +1,13 @@
 # INTRODUCTION
 ***This is the official pytorch implementation of \<Causal Incremental Graph Convolution forRecommender System Retraining\> published in IEEE TRANSACTIONS ON Neural Networks and Learning Systems. If you use the code please cite our paper***
 
-***@article{ding2021causal,  
-title={Causal incremental graph convolution for recommender system retraining},  
-author={Ding, Sihao and Feng, Fuli and He, Xiangnan and Liao, Yong and Shi, Jun and Zhang, Yongdong},  
-journal={IEEE TRANSACTIONS ON Neural Networks and Learning Systems},  year={2022}}***
+***@article{
+  ding2021causal,  
+  title={Causal incremental graph convolution for recommender system retraining},  
+  author={Ding, Sihao and Feng, Fuli and He, Xiangnan and Liao, Yong and Shi, Jun and Zhang, Yongdong},  
+  journal={IEEE TRANSACTIONS ON Neural Networks and Learning Systems},  
+  year={2022}
+  }***
 
 ***This README is the guidience of reproducing CI-LightGCN results. Since the evaluation protocol of CI-LightGCN is sequential, if you run the code without any mid products it will cost very large time (for data processing, training at each stage, and testing at each stage). So we also provide mid products at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320" for quickly reproducing. Our code can also run without any mid products but with large preparation time.***
 
