@@ -9,7 +9,7 @@
   year={2022}
   }***
 
-***This README is the guidience of reproducing CI-LightGCN results. Since the evaluation protocol of CI-LightGCN is sequential, if you run the code without any mid products it will cost very large time (for data processing, training at each stage, and testing at each stage). So we also provide mid products at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320" for quickly reproducing. Our code can also run without any mid products but with large preparation time.***
+***This README is the guidience of reproducing CI-LightGCN results. Since the evaluation protocol of CI-LightGCN is sequential, if you run the code without any mid products it will cost very large time (for data processing, training at each stage, and testing at each stage). So we also provide mid products at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320" for quickly reproducing. The code can also run without any mid products but with large time cost.***
 
 # REQUESMENT
 1.torch >= 1.7.1
