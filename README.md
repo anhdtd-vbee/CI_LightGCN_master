@@ -59,7 +59,7 @@ __All data files of Gowalla is the same naming logic, change "/finetune_yelp/" t
 
 # C. The required pre-processing results for quickly reproducing
 
-## a. weights files of static basic LightGCN
+## a). weights files of static basic LightGCN
 1. "./code/checkpoints/static_base_LightGCN_gowalla-3-64-28.npy-.pth.tar" is the __weights of basic LightGCN__ that trained with data of stages [0-30) of Gowalla. It is the input of all GCN-based mehtods such as CI-LightGCN, Full retrain LightGCN, Fine-tune LightGCN, SML-LightGCN-O, SML-LightGCN-E. Or you can train a new static LightGCN model based on data of stages [0-30) of Gowalla as the input of all methods by yourself.
 
 2. "./code/checkpoints/static_base_LightGCN_finetune_yelp-3-64-28.npy-.pth.tar" is the __weights of basic LightGCN__ that trained with data of stages [0-30) of Yelp. It is the input of all GCN-based mehtods such as CI-LightGCN, Full retrain LightGCN, Fine-tune LightGCN, SML-LightGCN-O, SML-LightGCN-E. Or you can train a new static LightGCN model based on data of stages [0-30) of Yelp as the input of all methods by yourself.
