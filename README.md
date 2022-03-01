@@ -22,7 +22,7 @@
 
 5.tqdm
 
-Or you can use docker to build the environment ```docker pull dsihao/3090_torch171```
+Or you can use docker to build the environment with commend ```docker pull dsihao/3090_torch171```
 
 # Overall:
 ___The necessary files about data must be downloaded at "https://rec.ustc.edu.cn/share/16d25180-595a-11ec-b406-1baff4e05320"___
