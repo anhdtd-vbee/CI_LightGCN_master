@@ -72,7 +72,7 @@ By using these files you can abandon all the training phase of CI-LightGCN for q
 2. "./save_for_inference/finetune_yelp/Embeddings_at_stage__t_.pth.tar" is the embeddings of all nodes in stage _t_, and "./save_for_inference/finetune_yelp/Weights-3-64-_t_-npy.pth.tar" is the model weights in stage _t_ of Yelp.
 
 
-# D). Reproducing from zero
+# D. Reproducing from zero
 
 1. To reproduce the result of CI-LightGCN on Yelp from zero you can use the commend 
 ```python CI-LightGCN_from_zero.py  --dataset='finetune_yelp' --model CILightGCN --finetune_epochs 300 --conv2d_reg 1e-2 --decay 1e-4 --icl_k 61 --notactive 1 --A 0.5 --inference_k 11 --radio_loss 0.7 --icl_reg 1```
