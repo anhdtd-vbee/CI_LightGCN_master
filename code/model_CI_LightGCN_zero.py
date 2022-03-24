@@ -494,7 +494,7 @@ class LightGCN_joint(BasicModel):
 
 
         loss1 = torch.mean(torch.nn.functional.softplus(neg_scores - pos_scores))
-        loss2 = 0.1 * torch.mean(torch.nn.functional.softplus(icl_neg_scores - icl_pos_scores)/world.icl_k)
+        loss2 = torch.mean(torch.nn.functional.softplus(icl_neg_scores - icl_pos_scores)/world.icl_k*0.01)
 
         if world.dataset == 'news':
             reg_loss = world.lgcn_weight_dency * reg_loss1 + world.conv2d_reg * reg_loss2 + 1e-3*reg_loss3
