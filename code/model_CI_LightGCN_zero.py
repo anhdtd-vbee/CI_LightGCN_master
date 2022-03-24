@@ -482,7 +482,7 @@ class LightGCN_joint(BasicModel):
         neg_scores = torch.sum(neg_scores, dim=1)
 
         users_emb_icl = users_emb.unsqueeze(1)
-        icl_pos_scores = torch.mul(users_emb_icl, matchitem_emb)
+        icl_pos_scores = torch.mul(users_emb_icl, torch.mean(matchitem_emb,1))
         icl_pos_scores = torch.sum(icl_pos_scores, dim=-1)
         icl_neg_scores = torch.mul(users_emb_icl, neg_emb)
         icl_neg_scores = torch.sum(icl_neg_scores, dim=-1)
