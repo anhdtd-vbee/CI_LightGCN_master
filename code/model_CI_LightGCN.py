@@ -474,7 +474,6 @@ class LightGCN_joint(BasicModel):
 
         matchitem_emb_stack = torch.stack([matchitem_layer0, matchitem_layer1, matchitem_layer2, matchitem_layer3], dim=1)
         matchitem_emb = torch.mean(matchitem_emb_stack, dim=1)
-        matchitem_emb_neg = torch.mean(torch.stack([item_neg_layer0, item_neg_layer1, item_neg_layer2, item_neg_layer3], dim=1), dim=1)
 
         pos_scores = torch.mul(users_emb, pos_emb)
         pos_scores = torch.sum(pos_scores, dim=1)
@@ -484,7 +483,7 @@ class LightGCN_joint(BasicModel):
         users_emb_icl = users_emb.unsqueeze(1)
         icl_pos_scores = torch.mul(users_emb_icl, matchitem_emb)
         icl_pos_scores = torch.sum(icl_pos_scores, dim=-1)
-        icl_neg_scores = torch.mul(users_emb_icl, matchitem_emb_neg)
+        icl_neg_scores = torch.mul(users_emb_icl, neg_emb)
         icl_neg_scores = torch.sum(icl_neg_scores, dim=-1)
 
         reg_loss1 = (1/2)*(user_layer0.norm(2).pow(2) + item_pos_layer0.norm(2).pow(2) + item_neg_layer0.norm(2).pow(2)) / float(len(users))
@@ -502,9 +501,9 @@ class LightGCN_joint(BasicModel):
             reg_loss = world.lgcn_weight_dency * reg_loss1+ world.conv2d_reg * reg_loss2 + 0*reg_loss3 + world.lgcn_weight_dency * reg_loss_icl
         elif world.dataset =='gowalla':
             reg_loss = world.lgcn_weight_dency * reg_loss1 + world.conv2d_reg * reg_loss2 + 0*reg_loss3
-        loss = 0.5*loss1 + 0.5*loss2 + reg_loss
+        loss = (1-world.ratio_loss)*loss1 + world.ratio_loss*loss2 + reg_loss
 
-        return loss, 0.5*loss1, 0.5*loss2, world.lgcn_weight_dency * reg_loss_icl
+        return loss, (1-world.ratio_loss)*loss1, world.ratio_loss*loss2, world.lgcn_weight_dency * reg_loss_icl
 
     def get_finalprediction(self, old_weights, users, allLayerEmbs, degree_molecular, degree_Denominator, old_user_degree, old_item_degree, active_user, active_item, trained_user, trained_item, match_users):
         with torch.no_grad():
